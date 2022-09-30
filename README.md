@@ -25,12 +25,12 @@ What is contained in this file:
 * mail list with alternating colors (I am old fashioned like that, when TB was awesome)
 
 
-### Changing the "blocky" appearance
+### General appearance changes
 * message header buttons without borders (more streamlined imo)  
 * warning messages appear in a toned-down blue (instead of the very bright yellow ugh!)
 
 ### Configurable styles
-I am working on using CSS variables with the goal of easing updating / creating different styles.
+I am using CSS variables extensively with the goal of easing updating / creating different styles.
 
 ## Mouseless navigation
 
