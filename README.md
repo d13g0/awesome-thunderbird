@@ -16,20 +16,21 @@ Add this file to your Thunderbird chrome folder. For mac users this folder will 
 
 What is contained in this file:
 
+### Fonts
+
 * Configurable font size for the interface
 * Using SF Pro by default (Mac) instead of Verdana
+
+### Reading mail
 * mail list with alternating colors (I am old fashioned like that, when TB was awesome)
+
+
+### Changing the "blocky" appearance
 * message header buttons without borders (more streamlined imo)  
 * warning messages appear in a toned-down blue (instead of the very bright yellow ugh!)
 
-Also:
-
+### Configurable styles
 I am working on using CSS variables with the goal of easing updating / creating different styles.
-
-Next in my list:
-
-* Dark mode 
-
 
 ## Mouseless navigation
 
@@ -51,7 +52,10 @@ I a using the `tbkeys` plugin to interact with Thunderbird without the mouse, sa
     "v": "MsgMoveMessage('imap://<!-- your spam folder goes here  -->/Spam')"
     "u": "tbkeys:closeMessageAndRefresh",
 }
-
-
 ```
+
+## Next:
+
+
+* Dark mode 
 
