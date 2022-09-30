@@ -139,8 +139,11 @@
 
 
 
-/* ------------------------------------------------------------------------------------------------*/
-/*  Pane Splitters                                                                                 */
+/* ------------------------------------------------------------------------------------------------
+  Pane Splitters                                                                                 
+
+  - Thicker splitter easier to grab for resizing
+
 /* ------------------------------------------------------------------------------------------------*/
 #threadpane-splitter {
   /* same size whether is vertical or horizontal */
@@ -148,7 +151,7 @@
   width           : var(--tm-div-size)  !important;
   background-color: var(--tm-div-color) !important;
   border: 2px !important;
-  margin-inline-start: 0px; !important
+  margin-inline-start: 0px !important;
 }
 
 
@@ -156,7 +159,7 @@
   width           : var(--tm-div-size)  !important;
   background-color: var(--tm-div-color) !important;
   border: 2px !important;
-  margin-inline-start: 0px; !important
+  margin-inline-start: 0px !important;
 }
 
 
@@ -208,9 +211,10 @@ toolbarbutton.toolbarbutton-1.message-header-view-button{
   --message-bar-icon-url          : var(--warn-icon-url);
 }
 
-notification-message {
+/* notification-message {
   background-color: #ff0000 !important;
-}
+} */
+
 /* ------------------------------------------------------------------------------------------------*/
 /*  Multimessage                                                                                   */
 /* ------------------------------------------------------------------------------------------------*/
@@ -244,9 +248,12 @@ notification-message {
   font-size : var(--tm-text-base) !important;
 }
 
-/* ------------------------------------------------------------------------------------------------*/
-/*  Calendar
-/* ------------------------------------------------------------------------------------------------*/
+/* ------------------------------------------------------------------------------------------------/
+    Calendar
+ 
+    - Grid lines softened
+    - Thicker splitter easier to grab for resizing
+   ------------------------------------------------------------------------------------------------*/
 
 .multiday-hour-box {
   border: 1px var(--tm-calendar-grid-color) solid !important;
@@ -256,6 +263,18 @@ notification-message {
 .day-column-heading {
   font-weight: normal !important;
   font-size: var(--tm-text-base) !important;
+}
+
+#calsidebar_splitter {
+  height          : var(--tm-div-size)  !important;
+  width           : var(--tm-div-size)  !important;
+  background-color: var(--tm-div-color) !important;
+  border: 2px !important;
+  margin-inline-start: 0px !important;
+}
+
+#view-box {
+  border: 0px solid !important;
 }
 
 /* ------------------------------------------------------------------------------------------------*/
