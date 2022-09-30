@@ -1,1 +1,1 @@
-/Users/odin/Library/Thunderbird/Profiles/2y15eqlu.default-release/user.js
+../../Library/Thunderbird/Profiles/2y15eqlu.default-release/user.js
