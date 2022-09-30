@@ -1,0 +1,263 @@
+/* ------------------------------------------------------------------------------------------------*/
+/* Variables
+/* ------------------------------------------------------------------------------------------------*/
+:root {
+  --tm-font-family  : SF Pro;
+  --tm-text-sm      : 11px;
+  --tm-text-base    : 13px;
+  --tm-text-lg      : 15px;
+  
+  
+  --tm-bg-color     : #282C34;
+  --tm-fg-color     : #AAB2BF;
+  
+  --tm-white        : #FFF;
+  --tm-blue         : #61AFEF;
+  --tm-blue-bright  : #528BFF;
+  --tm-gray         : #636D83;
+  
+  
+  /* Folder List */
+  --tm-folder-item-height : 28px;
+  
+  /* Mail List */
+  --tm-mail-item-height             : 28px;
+  --tm-new-mail-folder-color        : var(--tm-blue-bright);
+  
+  --tm-mail-grid-color              : #F0F3F7;
+  --tm-mail-grid-border             : 0px solid transparent;
+  
+  --tm-mail-item-selected-bg-color  : var(--tm-blue); 
+  --tm-mail-item-selected-fg-color  : var(--tm-white);
+  
+  --tm-mail-item-hover-bg-color     : #D8D8D8; /*#BDE5FA;*/
+  --tm-mail-item-hover-fg-color     : #00FF00;
+  
+  /* Tabs */
+  --tm-tab-line-color               : var(--tm-blue);
+  
+  /* Panel Dividers */
+  --tm-div-size                     : 5px;
+  --tm-div-color                    : #e0e0e0;
+  
+  /* Message Panel */
+  --tm-message-warning-bg-color     : #d0edff;
+  --tm-message-warning-fg-color     : #000;
+  
+  /*
+  
+  --lwt-accent-color -> background at the top of the window
+  */
+  
+  /* Calendar*/
+  --tm-calendar-grid-color         : #DADCE0;
+}
+
+
+/* ------------------------------------------------------------------------------------------------*/
+/* General Interface */
+/* ------------------------------------------------------------------------------------------------*/
+*{
+  font-family: var(--tm-font-family);
+}
+
+
+#messengerWindow {
+ font-size              : var(--tm-text-base)      !important;
+  --lwt-tab-line-color  : var(--tm-tab-line-color) !important;
+  /*--lwt-accent-color    : var(--tm-gray)           !important;*/
+}
+
+
+/* ------------------------------------------------------------------------------------------------*/
+/* Folder Panel                                                                                    */
+/* ------------------------------------------------------------------------------------------------*/
+#folderTree {
+  /*background-color: var(--tm-bg-color) !important;*/
+}
+
+#folderTree > treechildren {
+  font-size           : var(--tm-text-base) !important;
+  --new-folder-color  : var(--tm-new-mail-folder-color) !important;
+}
+
+#folderTree > treechildren::-moz-tree-row {
+  height              : var(--tm-folder-item-height) !important;
+  min-height          : var(--tm-folder-item-height) !important;
+}
+
+#folderTree > treechildren::-moz-tree-row(selected) {
+   border             : 1px solid transparent !important;
+   background-color   : var(--tm-blue) !important;
+ }
+
+#folderTree > treechildren::-moz-tree-cell {
+   padding            : 0 8px !important;
+ }
+
+#folderTree > treechildren::-moz-tree-cell-text(selected) {
+  color               : var(--tm-white) !important; 
+}
+
+
+/* ------------------------------------------------------------------------------------------------*/
+/* Mail Panel                                                                                      */
+/* ------------------------------------------------------------------------------------------------*/
+#threadTree > treechildren {
+  font-size         : var(--tm-text-base) !important;
+
+} 
+
+#threadTree > treechildren::-moz-tree-row {
+  height            : var(--tm-mail-item-height) !important;
+  min-height        : var(--tm-mail-item-height) !important;
+  border            : var(--tm-mail-grid-border) !important;
+} 
+
+#threadTree > treechildren::-moz-tree-row(odd) {
+/*   border-bottom     : var(--tm-mail-grid-border) !important;
+  border-top        : var(--tm-mail-grid-border) !important; */
+  background-color  : var(--tm-mail-grid-color)  !important;
+  
+}
+
+
+#threadTree  treechildren::-moz-tree-row(selected) {
+  background-color    : var(--tm-mail-item-selected-bg-color) !important;
+  color               : var(--tm-mail-item-selected-fg-color) !important;
+}
+
+
+#threadTree  treechildren::-moz-tree-row(hover) {
+  color               : var(--tm-white) !important; 
+  background-color    : var(--tm-mail-item-hover-bg-color)  !important;
+} 
+
+#folderTree > treechildren::-moz-tree-cell-text(selected, hover) {
+  color               : var(--tm-white) !important; 
+}
+
+
+
+/* ------------------------------------------------------------------------------------------------*/
+/*  Pane Splitters                                                                                 */
+/* ------------------------------------------------------------------------------------------------*/
+#threadpane-splitter {
+  /* same size whether is vertical or horizontal */
+  height          : var(--tm-div-size)  !important;
+  width           : var(--tm-div-size)  !important;
+  background-color: var(--tm-div-color) !important;
+  border: 2px !important;
+  margin-inline-start: 0px; !important
+}
+
+
+#folderpane_splitter {
+  width           : var(--tm-div-size)  !important;
+  background-color: var(--tm-div-color) !important;
+  border: 2px !important;
+  margin-inline-start: 0px; !important
+}
+
+
+/* ------------------------------------------------------------------------------------------------*/
+/*  Mail Panel                                                                                     */
+/* ------------------------------------------------------------------------------------------------*/
+#msgHeaderView {
+  font-size: 14px !important;
+  background-color: -moz-dialog !important;
+  border-bottom: 0 !important;
+}
+
+#messagepaneboxwrapper {
+  background-color: -moz-dialog !important;
+}
+
+#messagepanebox {
+  margin: 5px 0 0 0 !important;
+  background-color: -moz-dialog !important;
+  padding: 0 !important;
+  border-bottom: 0 !important;
+}
+
+#messagepanewrapper {
+margin: 20px 20px 0 20px !important;
+
+}
+
+#messagepane {
+  margin:5px 10px !important;
+}
+
+#mail-notification-top {
+  font-size: 13px !important;
+}
+
+#expandedfromRow {
+  margin-top:14px;
+}
+
+
+toolbarbutton.toolbarbutton-1.message-header-view-button{
+  border:0px solid transparent !important;
+}
+
+[type=warning] {
+  --message-bar-background-color  : var(--tm-message-warning-bg-color) !important;
+  --message-bar-text-color        : var(--tm-message-warning-fg-color) !important;; 
+  --message-bar-icon-url          : var(--warn-icon-url);
+}
+
+notification-message {
+  background-color: #ff0000 !important;
+}
+/* ------------------------------------------------------------------------------------------------*/
+/*  Multimessage                                                                                   */
+/* ------------------------------------------------------------------------------------------------*/
+#message_list {
+  line-height: 10 !important;
+ 
+}
+
+#multimessage {
+  line-height: 1.5 !important;
+}
+
+
+/* ------------------------------------------------------------------------------------------------*/
+/*  Tabs                                                                                           */
+/* ------------------------------------------------------------------------------------------------*/
+#tabs-toolbar {
+  margin-top: 10px !important;
+  margin-left: 10px !important;
+  text-align: center;
+}
+
+#tabmail-tabs {
+  font-size: var(--tm-text-sm) !important;
+  font-weight: bold !important;
+}
+/* ------------------------------------------------------------------------------------------------*/
+/*  Attachment Bar */
+/* ------------------------------------------------------------------------------------------------*/
+#attachmentBar {
+  font-size : var(--tm-text-base) !important;
+}
+
+/* ------------------------------------------------------------------------------------------------*/
+/*  Calendar
+/* ------------------------------------------------------------------------------------------------*/
+
+.multiday-hour-box {
+  border: 1px var(--tm-calendar-grid-color) solid !important;
+  margin: -1px !important;
+}
+
+.day-column-heading {
+  font-weight: normal !important;
+  font-size: var(--tm-text-base) !important;
+}
+
+/* ------------------------------------------------------------------------------------------------*/
+
+
