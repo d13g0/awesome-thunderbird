@@ -26,18 +26,34 @@
   
   /* Light Theme Colors */
   
-  --at-color-white     : #eeeeee;
-  --at-color-black     : #282c34;
+  --at-color-white     : #ffffff;
+  --at-color-white-2   : #eeeeee;
+  --at-color-white-3   : #e0e0e0;
+  
+  
+  --at-color-gray      : #828997;
+  --at-color-gray-2    : #DADCE0;
+  
+  
+  --at-color-black     : #000000;
+  --at-color-black-2   : #282c34;
+  
   --at-color-red       : #be5046;
   --at-color-red-2     : #e06c75;
-  --at-color-green     : #98c379;
+  
+  --at-color-green     : #008700;
+  
   --at-color-yellow    : #d19a66;
-  --at-color-yellow-2  : #e5c07b;
+  --at-color-yellow-2  : #ffffaf;
+  
   --at-color-blue      : #61afef; 
+  --at-color-blue-2    : #d0edff;
+  --at-color-blue-3    : #f0f3f7;
+  
   --at-color-magenta   : #c678dd;
   --at-color-cyan      : #56b6c2;
-  --at-color-gray      : #4b5263;
-  --at-color-gray-2    : #5c6370;
+  
+  
 
 
    /** Dark Theme Colors (wip)
@@ -60,48 +76,46 @@
   --at-fg-color     : #AAB2BF;
   
   --at-white        : #FFF;
-  --at-blue         : #61AFEF;
+  --at-blue         : #999;
   --at-blue-bright  : #528BFF;
   --at-gray         : #636D83;
   
-
   
   
   /* Folder List */
   --at-folder-item-height : 28px;
   
   /* Mail List */
-  --at-mail-item-height             : 28px;
-  --at-new-mail-folder-color        : var(--at-blue-bright);
+  --at-mail-grid-color              : var(--at-color-blue-3);
+  --at-new-mail-folder-color        : var(--at-color-blue);
+    
+  --at-mail-item-selected-bg-color  : var(--at-color-blue); 
+  --at-mail-item-selected-fg-color  : var(--at-color-white);
   
-  --at-mail-grid-color              : #F0F3F7;
+  --at-mail-item-hover-bg-color     : var(--at-color-white-3);
+  --at-mail-item-hover-fg-color     : var(--at-color-blue);
+  
+  --at-mail-item-height             : 28px;
   --at-mail-grid-border             : 0px solid transparent;
   
-  --at-mail-item-selected-bg-color  : var(--at-blue); 
-  --at-mail-item-selected-fg-color  : var(--at-white);
-  
-  --at-mail-item-hover-bg-color     : #D8D8D8; /*#BDE5FA;*/
-  --at-mail-item-hover-fg-color     : #00FF00;
-  
   /* Tabs */
-  --at-tab-line-color               : var(--at-blue);
+  --at-tab-line-color               : var(--at-color-blue);
   
   /* Panel Dividers */
   --at-div-size                     : 5px;
-  --at-div-color                    : #e0e0e0;
+  --at-div-color                    : var(--at-color-white-3);
   
   /* Message Panel */
-  --at-message-warning-bg-color     : #d0edff;
-  --at-message-warning-fg-color     : #000;
+  --at-message-warning-bg-color     : var(--at-color-blue-2);
+  --at-message-warning-fg-color     : var(--at-color-black);
   
   /*
-  
-  --lwt-accent-color -> background at the top of the window
+    --lwt-accent-color -> background at the top of the window
   */
   
   /* Calendar*/
-  --at-calendar-grid-color         : #DADCE0;
-  --at-calendar-grid-color-2       : #828997;
+  --at-calendar-grid-color         : var(--at-color-gray-2);
+  --at-calendar-grid-color-2       : var(--at-color-gray);
 }
 
 
@@ -139,7 +153,7 @@
 
 #folderTree > treechildren::-moz-tree-row(selected) {
    border             : 1px solid transparent !important;
-   background-color   : var(--at-blue) !important;
+   background-color   : var(--at-color-blue) !important;
  }
 
 #folderTree > treechildren::-moz-tree-cell {
@@ -147,7 +161,7 @@
  }
 
 #folderTree > treechildren::-moz-tree-cell-text(selected) {
-  color               : var(--at-white) !important; 
+  color               : var(--at-color-white) !important; 
 }
 
 
