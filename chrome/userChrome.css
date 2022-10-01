@@ -1,48 +1,98 @@
+/*
+
+       Awesome Thunderbird
+              __
+             /'{>
+         ____) (____
+       //'--;   ;--'\\
+      ///////\_/\\\\\\\
+             m m
+
+     
+  by d13g0, made with <3 in Toronto
+
+*/
+
 /* ------------------------------------------------------------------------------------------------*/
 /* Variables
 /* ------------------------------------------------------------------------------------------------*/
 :root {
-  --tm-font-family  : SF Pro;
-  --tm-text-sm      : 11px;
-  --tm-text-base    : 13px;
-  --tm-text-lg      : 15px;
+  --at-font-family  : SF Pro;
+  --at-text-sm      : 11px;
+  --at-text-base    : 13px;
+  --at-text-lg      : 15px;
   
+
   
-  --tm-bg-color     : #282C34;
-  --tm-fg-color     : #AAB2BF;
+  /* Light Theme Colors */
   
-  --tm-white        : #FFF;
-  --tm-blue         : #61AFEF;
-  --tm-blue-bright  : #528BFF;
-  --tm-gray         : #636D83;
+  --at-color-white     : #eeeeee;
+  --at-color-black     : #282c34;
+  --at-color-red       : #be5046;
+  --at-color-red-2     : #e06c75;
+  --at-color-green     : #98c379;
+  --at-color-yellow    : #d19a66;
+  --at-color-yellow-2  : #e5c07b;
+  --at-color-blue      : #61afef; 
+  --at-color-magenta   : #c678dd;
+  --at-color-cyan      : #56b6c2;
+  --at-color-gray      : #4b5263;
+  --at-color-gray-2    : #5c6370;
+
+
+   /** Dark Theme Colors (wip)
+  --at-dt-white     : #abb2bf;
+  --at-dt-black     : #282c34;
+  --at-dt-red       : #be5046;
+  --at-dt-red-2     : #e06c75;
+  --at-dt-green     : #98c379;
+  --at-dt-yellow    : #d19a66;
+  --at-dt-yellow-2  : #e5c07b;
+  --at-dt-blue      : #61afef; 
+  --at-dt-magenta   : #c678dd;
+  --at-dt-cyan      : #56b6c2;
+  --at-dt-gray      : #4b5263;
+  --at-dt-gray-2    : #5c6370;
+  */
+  
+    
+  --at-bg-color     : #282C34;
+  --at-fg-color     : #AAB2BF;
+  
+  --at-white        : #FFF;
+  --at-blue         : #61AFEF;
+  --at-blue-bright  : #528BFF;
+  --at-gray         : #636D83;
+  
+
   
   
   /* Folder List */
-  --tm-folder-item-height : 28px;
+  --at-folder-item-height : 28px;
   
   /* Mail List */
-  --tm-mail-item-height             : 28px;
-  --tm-new-mail-folder-color        : var(--tm-blue-bright);
+  --at-mail-item-height             : 28px;
+  --at-new-mail-folder-color        : var(--at-blue-bright);
   
-  --tm-mail-grid-color              : #F0F3F7;
-  --tm-mail-grid-border             : 0px solid transparent;
+  --at-mail-grid-color              : #F0F3F7;
+  --at-mail-grid-border             : 0px solid transparent;
   
-  --tm-mail-item-selected-bg-color  : var(--tm-blue); 
-  --tm-mail-item-selected-fg-color  : var(--tm-white);
+  --at-mail-item-selected-bg-color  : var(--at-blue); 
+  --at-mail-item-selected-fg-color  : var(--at-white);
   
-  --tm-mail-item-hover-bg-color     : #D8D8D8; /*#BDE5FA;*/
-  --tm-mail-item-hover-fg-color     : #00FF00;
+  --at-mail-item-hover-bg-color     : #D8D8D8; /*#BDE5FA;*/
+  --at-mail-item-hover-fg-color     : #00FF00;
   
   /* Tabs */
-  --tm-tab-line-color               : var(--tm-blue);
+  --at-tab-line-color               : var(--at-blue);
   
   /* Panel Dividers */
-  --tm-div-size                     : 5px;
-  --tm-div-color                    : #e0e0e0;
+  --at-div-size                     : 5px;
+  --at-div-color                    : #e0e0e0;
   
   /* Message Panel */
-  --tm-message-warning-bg-color     : #d0edff;
-  --tm-message-warning-fg-color     : #000;
+  --at-message-warning-bg-color     : #d0edff;
+  --at-message-warning-fg-color     : #000;
   
   /*
   
@@ -50,7 +100,8 @@
   */
   
   /* Calendar*/
-  --tm-calendar-grid-color         : #DADCE0;
+  --at-calendar-grid-color         : #DADCE0;
+  --at-calendar-grid-color-2       : #828997;
 }
 
 
@@ -58,14 +109,14 @@
 /* General Interface */
 /* ------------------------------------------------------------------------------------------------*/
 *{
-  font-family: var(--tm-font-family);
+  font-family: var(--at-font-family);
 }
 
 
 #messengerWindow {
- font-size              : var(--tm-text-base)      !important;
-  --lwt-tab-line-color  : var(--tm-tab-line-color) !important;
-  /*--lwt-accent-color    : var(--tm-gray)           !important;*/
+ font-size              : var(--at-text-base)      !important;
+  --lwt-tab-line-color  : var(--at-tab-line-color) !important;
+  /*--lwt-accent-color    : var(--at-gray)           !important;*/
 }
 
 
@@ -77,18 +128,18 @@
 }
 
 #folderTree > treechildren {
-  font-size           : var(--tm-text-base) !important;
-  --new-folder-color  : var(--tm-new-mail-folder-color) !important;
+  font-size           : var(--at-text-base) !important;
+  --new-folder-color  : var(--at-new-mail-folder-color) !important;
 }
 
 #folderTree > treechildren::-moz-tree-row {
-  height              : var(--tm-folder-item-height) !important;
-  min-height          : var(--tm-folder-item-height) !important;
+  height              : var(--at-folder-item-height) !important;
+  min-height          : var(--at-folder-item-height) !important;
 }
 
 #folderTree > treechildren::-moz-tree-row(selected) {
    border             : 1px solid transparent !important;
-   background-color   : var(--tm-blue) !important;
+   background-color   : var(--at-blue) !important;
  }
 
 #folderTree > treechildren::-moz-tree-cell {
@@ -96,7 +147,7 @@
  }
 
 #folderTree > treechildren::-moz-tree-cell-text(selected) {
-  color               : var(--tm-white) !important; 
+  color               : var(--at-white) !important; 
 }
 
 
@@ -104,37 +155,37 @@
 /* Mail Panel                                                                                      */
 /* ------------------------------------------------------------------------------------------------*/
 #threadTree > treechildren {
-  font-size         : var(--tm-text-base) !important;
+  font-size         : var(--at-text-base) !important;
 
 } 
 
 #threadTree > treechildren::-moz-tree-row {
-  height            : var(--tm-mail-item-height) !important;
-  min-height        : var(--tm-mail-item-height) !important;
-  border            : var(--tm-mail-grid-border) !important;
+  height            : var(--at-mail-item-height) !important;
+  min-height        : var(--at-mail-item-height) !important;
+  border            : var(--at-mail-grid-border) !important;
 } 
 
 #threadTree > treechildren::-moz-tree-row(odd) {
-/*   border-bottom     : var(--tm-mail-grid-border) !important;
-  border-top        : var(--tm-mail-grid-border) !important; */
-  background-color  : var(--tm-mail-grid-color)  !important;
+/*   border-bottom     : var(--at-mail-grid-border) !important;
+  border-top        : var(--at-mail-grid-border) !important; */
+  background-color  : var(--at-mail-grid-color)  !important;
   
 }
 
 
 #threadTree  treechildren::-moz-tree-row(selected) {
-  background-color    : var(--tm-mail-item-selected-bg-color) !important;
-  color               : var(--tm-mail-item-selected-fg-color) !important;
+  background-color    : var(--at-mail-item-selected-bg-color) !important;
+  color               : var(--at-mail-item-selected-fg-color) !important;
 }
 
 
 #threadTree  treechildren::-moz-tree-row(hover) {
-  color               : var(--tm-white) !important; 
-  background-color    : var(--tm-mail-item-hover-bg-color)  !important;
+  color               : var(--at-white) !important; 
+  background-color    : var(--at-mail-item-hover-bg-color)  !important;
 } 
 
 #folderTree > treechildren::-moz-tree-cell-text(selected, hover) {
-  color               : var(--tm-white) !important; 
+  color               : var(--at-white) !important; 
 }
 
 
@@ -147,17 +198,17 @@
 /* ------------------------------------------------------------------------------------------------*/
 #threadpane-splitter {
   /* same size whether is vertical or horizontal */
-  height          : var(--tm-div-size)  !important;
-  width           : var(--tm-div-size)  !important;
-  background-color: var(--tm-div-color) !important;
+  height          : var(--at-div-size)  !important;
+  width           : var(--at-div-size)  !important;
+  background-color: var(--at-div-color) !important;
   border: 2px !important;
   margin-inline-start: 0px !important;
 }
 
 
 #folderpane_splitter {
-  width           : var(--tm-div-size)  !important;
-  background-color: var(--tm-div-color) !important;
+  width           : var(--at-div-size)  !important;
+  background-color: var(--at-div-color) !important;
   border: 2px !important;
   margin-inline-start: 0px !important;
 }
@@ -206,8 +257,8 @@ toolbarbutton.toolbarbutton-1.message-header-view-button{
 }
 
 [type=warning] {
-  --message-bar-background-color  : var(--tm-message-warning-bg-color) !important;
-  --message-bar-text-color        : var(--tm-message-warning-fg-color) !important;; 
+  --message-bar-background-color  : var(--at-message-warning-bg-color) !important;
+  --message-bar-text-color        : var(--at-message-warning-fg-color) !important;; 
   --message-bar-icon-url          : var(--warn-icon-url);
 }
 
@@ -238,37 +289,97 @@ toolbarbutton.toolbarbutton-1.message-header-view-button{
 }
 
 #tabmail-tabs {
-  font-size: var(--tm-text-sm) !important;
+  font-size: var(--at-text-sm) !important;
   font-weight: bold !important;
 }
 /* ------------------------------------------------------------------------------------------------*/
 /*  Attachment Bar */
 /* ------------------------------------------------------------------------------------------------*/
 #attachmentBar {
-  font-size : var(--tm-text-base) !important;
+  font-size : var(--at-text-base) !important;
 }
+
 
 /* ------------------------------------------------------------------------------------------------/
     Calendar
+
+    Goal: Main design goal is to soften grid lines and update the colour palette
  
     - Grid lines softened
     - Thicker splitter easier to grab for resizing
    ------------------------------------------------------------------------------------------------*/
 
+:root{
+  --viewWeekendBackground        : transparent !important;
+  --viewHeaderSelectedBackground : transparent !important;
+  --viewDayBoxSelectedBackground : transparent !important;
+  --viewOffTimeBackground        : transparent !important;
+}
+
+calendar-header-container {
+  border-left: 1px solid var(--at-calendar-grid-color) !important;
+  border-bottom: 1px solid var(--at-calendar-grid-color-2) !important;
+  margin-left: -1px !important;
+  
+}
+
+.multiday-hour-box-container{
+  border:0px solid !important;
+}
+
 .multiday-hour-box {
-  border: 1px var(--tm-calendar-grid-color) solid !important;
-  margin: -1px !important;
+  color         : var(--at-calendar-grid-color-2) !important;
+  border        : 1px var(--at-calendar-grid-color) solid !important;
+  margin-top    : -1px !important;
+  margin-bottom : -1px !important;
+  margin-left   : -1px !important;
+  margin-right  : -1px !important;
+}
+
+.multiday-hour-box .multiday-hour-box-off-time {
+  border: 1px var(--at-calendar-grid-color) solid !important;
+  margin-top: -1px !important;
+  margin-bottom: -1px !important;
+  margin-left: -1px !important;
+  margin-right: -1px !important;
+}
+
+.multiday-header-corner {
+  border-right:0px transparent solid !important;
+}
+
+.multiday-timebar .multiday-hour-box-container {
+  border-right: 0px transparent solid !important;
+}
+
+.multiday-hour-box .multiday-timebar-time {
+  color: var(--at-calendar-grid-color-2) !important;
+}
+
+
+.day-column-container {
+  border:0px transparent !important;
+  
 }
 
 .day-column-heading {
-  font-weight: normal !important;
-  font-size: var(--tm-text-base) !important;
+  font-weight : normal !important;
+  font-size   : var( --at-text-base) !important;
+  color       : var(--at-calendar-grid-color-2) !important;
+  border      : 0px transparent !important;
 }
 
+/* .day-column-heading .day-column-selected{
+  background-color: var(--at-calendar-grid-color-2) !important;
+  color: var(--at-white) !important;
+}
+ */
+
+
 #calsidebar_splitter {
-  height          : var(--tm-div-size)  !important;
-  width           : var(--tm-div-size)  !important;
-  background-color: var(--tm-div-color) !important;
+  height          : var(--at-div-size)  !important;
+  width           : var(--at-div-size)  !important;
+  background-color: var(--at-div-color) !important;
   border: 2px !important;
   margin-inline-start: 0px !important;
 }
@@ -276,6 +387,7 @@ toolbarbutton.toolbarbutton-1.message-header-view-button{
 #view-box {
   border: 0px solid !important;
 }
+
 
 /* ------------------------------------------------------------------------------------------------*/
 
