@@ -3,10 +3,14 @@
 After 10 years of frustration with Apple Mail. I am switching back to Thunderbird. Here are some customizations
 
 ## Contents
+1. [News](#news)
+2. [UI Changes](#ui-changes)
+3. [Mouseless navigation](#mouseless-navigation)
 
-1. [UI Changes](#ui-changes)
-2. [Mouseless navigation](#mouseless-navigation)
+## News
+Started to work on a new version to support Thunderbird 115 (main branch now) 🐦
 
+The latest working version for Thunderbird 102 can be found by checking out the branch b102 🕺🏽
 
 ## UI changes
 
@@ -54,8 +58,7 @@ I a using the `tbkeys` plugin to interact with Thunderbird without the mouse, sa
 }
 ```
 
-## Next:
 
 
-* Dark mode 
+
 

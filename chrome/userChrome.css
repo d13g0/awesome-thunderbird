@@ -12,93 +12,73 @@
   by d13g0, made with <3 in Toronto
 
   Thunderbird 115
-  
+
+    messengerWindow
+    *--------------------------------------------------------------------------------------*
+    |                                                                                      |
+    *--------------------------------------------------------------------------------------*
+    | folderTree   |  threadTree                                                           |
+    |              |                                                                       |
+    |              |-----------------------------------------------------------------------|
+    |              |  messagePane                                                          |
+    |              |                                                                       |
+    |              |                                                                       |
+    *--------------------------------------------------------------------------------------*
+
 */
+
 
 /* ------------------------------------------------------------------------------------------------*/
 /* Variables
 /* ------------------------------------------------------------------------------------------------*/
 :root {
+
+  /* Fonts                 */
   --at-font-family  : SF Pro;
   --at-text-sm      : 11px;
   --at-text-base    : 13px;
   --at-text-lg      : 15px;
-  
 
   
   /* Light Theme Colors */
-  
   --at-color-white     : #ffffff;
   --at-color-white-2   : #eeeeee;
   --at-color-white-3   : #e0e0e0;
-  
-  
   --at-color-gray      : #828997;
   --at-color-gray-2    : #DADCE0;
-  
-  
   --at-color-black     : #000000;
   --at-color-black-2   : #282c34;
-  
   --at-color-red       : #be5046;
   --at-color-red-2     : #e06c75;
-  
   --at-color-green     : #008700;
-  
-  --at-color-yellow    : #d19a66;
-  --at-color-yellow-2  : #ffffaf;
-  
-  --at-color-blue      : #61afef; 
-  --at-color-blue-2    : #d0edff;
+  --at-color-yellow    : #ffffaf;
+  --at-color-yellow-dark : #d19a66;
+  --at-color-blue      : #61afef;
+  --at-color-blue-2    : #2493EF;
+  /*--at-color-blue-2    : #d0edff;*/
   --at-color-blue-3    : #f0f3f7;
-  
   --at-color-magenta   : #c678dd;
   --at-color-cyan      : #56b6c2;
-  
-  
-
-
-   /** Dark Theme Colors (wip)
-  --at-dt-white     : #abb2bf;
-  --at-dt-black     : #282c34;
-  --at-dt-red       : #be5046;
-  --at-dt-red-2     : #e06c75;
-  --at-dt-green     : #98c379;
-  --at-dt-yellow    : #d19a66;
-  --at-dt-yellow-2  : #e5c07b;
-  --at-dt-blue      : #61afef; 
-  --at-dt-magenta   : #c678dd;
-  --at-dt-cyan      : #56b6c2;
-  --at-dt-gray      : #4b5263;
-  --at-dt-gray-2    : #5c6370;
-  */
-  
-    
   --at-bg-color     : #282C34;
   --at-fg-color     : #AAB2BF;
-  
   --at-white        : #FFF;
   --at-blue         : #999;
   --at-blue-bright  : #528BFF;
   --at-gray         : #636D83;
-  
-  
-  
-  /* Folder List */
+
+  /* folderTree (folder list) */
   --at-folder-item-height : 28px;
   
-  /* Mail List */
+  /* threadTree (mail list) */
+  --at-mail-item-height             : 28px;
+  --at-mail-item-border             : 1px solid var(--at-color-gray);
+  --at-mail-item-selected-bg-color  : var(--at-color-blue);
+  --at-mail-item-selected-fg-color  : var(--at-color-white);
+  --at-mail-item-hover-bg-color     : var(--at-color-white-3);
+  --at-mail-item-hover-fg-color     : var(--at-color-black-2);
+
   --at-mail-grid-color              : var(--at-color-blue-3);
   --at-new-mail-folder-color        : var(--at-color-blue);
-    
-  --at-mail-item-selected-bg-color  : var(--at-color-blue); 
-  --at-mail-item-selected-fg-color  : var(--at-color-white);
-  
-  --at-mail-item-hover-bg-color     : var(--at-color-white-3);
-  --at-mail-item-hover-fg-color     : var(--at-color-blue);
-  
-  --at-mail-item-height             : 28px;
-  --at-mail-grid-border             : 0px solid transparent;
   
   /* Tabs */
   --at-tab-line-color               : var(--at-color-blue);
@@ -122,88 +102,93 @@
 
 
 /* ------------------------------------------------------------------------------------------------*/
-/* General Interface */
+/* General Interface
 /* ------------------------------------------------------------------------------------------------*/
 *{
-  font-family: var(--at-font-family);
+    font-family: var(--at-font-family);
 }
-
 
 #messengerWindow {
- font-size              : var(--at-text-base)      !important;
-  --lwt-tab-line-color  : var(--at-tab-line-color) !important;
-  /*--lwt-accent-color    : var(--at-gray)           !important;*/
+    font-size              : var(--at-text-base)      !important;
 }
 
-
 /* ------------------------------------------------------------------------------------------------*/
-/* Folder Panel                                                                                    */
+/* folderTree (Folder List)                                                                        */
 /* ------------------------------------------------------------------------------------------------*/
 #folderTree {
-  /*background-color: var(--tm-bg-color) !important;*/
+  margin-top:3px !important;
 }
 
-#folderTree > treechildren {
+#folderTree ul {
   font-size           : var(--at-text-base) !important;
-  --new-folder-color  : var(--at-new-mail-folder-color) !important;
+  margin-bottom       : 2px !important;
+  margin-top          : 2px !important;
 }
 
-#folderTree > treechildren::-moz-tree-row {
-  height              : var(--at-folder-item-height) !important;
-  min-height          : var(--at-folder-item-height) !important;
+#folderTree:focus-within li.selected >.container,
+#folderTree li.drop-target > .container {
+  background-color: var(--at-color-blue) !important;
 }
 
-#folderTree > treechildren::-moz-tree-row(selected) {
-   border             : 1px solid transparent !important;
-   background-color   : var(--at-color-blue) !important;
- }
-
-#folderTree > treechildren::-moz-tree-cell {
-   padding            : 0 8px !important;
- }
-
-#folderTree > treechildren::-moz-tree-cell-text(selected) {
-  color               : var(--at-color-white) !important; 
+#folderTree:focus-within li.selected > .container > .unread-count {
+  color               : var(--at-color-white) !important;
+  background-color    : var(--at-color-red-2) !important;
 }
 
+.unread > .container > .unread-count {
+  background-color    : var(--at-color-red-2) !important;
+}
+
+#folderPaneWriteMessage {
+  background-color    : var(--at-color-gray) !important;
+  border-color        : var(--at-color-white) !important;
+  font-size           : var(--at-text-base) !important;
+  font-family         : var(--at-font-family) !important;
+}
 
 /* ------------------------------------------------------------------------------------------------*/
-/* Mail Panel                                                                                      */
+/* threadTree (Mail List)                                                                           */
 /* ------------------------------------------------------------------------------------------------*/
-#threadTree > treechildren {
-  font-size         : var(--at-text-base) !important;
 
-} 
+#threadTree [is="tree-view-table-body"] tr {
+    font-size       : var(--at-text-base)         !important;
+    height          : var(--at-mail-item-height)  !important;
+}
 
-#threadTree > treechildren::-moz-tree-row {
-  height            : var(--at-mail-item-height) !important;
-  min-height        : var(--at-mail-item-height) !important;
-  border            : var(--at-mail-grid-border) !important;
-} 
+#threadTree [is="tree-view-table-body"] tr:nth-child(2n) {
+  background-image  : linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.08)) !important;
+}
 
-#threadTree > treechildren::-moz-tree-row(odd) {
-/*   border-bottom     : var(--at-mail-grid-border) !important;
-  border-top        : var(--at-mail-grid-border) !important; */
-  background-color  : var(--at-mail-grid-color)  !important;
-  
+[is="tree-view-table-body"] > .selected {
+  color             : var(--at-mail-item-selected-fg-color) !important;
+  background-color  : var(--at-mail-item-selected-bg-color) !important;
+}
+[is="tree-view-table-body"] > :hover {
+  color             : var(--at-mail-item-hover-fg-color) !important;
+  background-color  : var(--at-mail-item-hover-bg-color) !important;
+}
+
+/* if you want borders uncomment this block ------*/
+/* #threadTree table {
+    border-collapse: collapse !important;
+    border-spacing: 0 !important;
+}
+
+#threadTree tr {
+    border: var(--at-mail-item-border) !important;
+}*/
+/* end of borders ---------*/
+
+/* ------------------------------------------------------------------------------------------------*/
+/* messagePane (email panel)                                                                       */
+/* ------------------------------------------------------------------------------------------------*/
+
+.container.infobar {
+  background-color: var(--at-color-yellow) !important;
 }
 
 
-#threadTree  treechildren::-moz-tree-row(selected) {
-  background-color    : var(--at-mail-item-selected-bg-color) !important;
-  color               : var(--at-mail-item-selected-fg-color) !important;
-}
-
-
-#threadTree  treechildren::-moz-tree-row(hover) {
-  color               : var(--at-white) !important; 
-  background-color    : var(--at-mail-item-hover-bg-color)  !important;
-} 
-
-#folderTree > treechildren::-moz-tree-cell-text(selected, hover) {
-  color               : var(--at-white) !important; 
-}
-
+/* Haven't reviewed anything from this point on in the new version 115 ....*/
 
 
 /* ------------------------------------------------------------------------------------------------
